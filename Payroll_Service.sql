@@ -63,3 +63,15 @@ SELECT MIN(Salary) AS  MinSalary,Gender FROM employee_payroll GROUP BY Gender
 Go
 SELECT MAX(Salary) AS MaxSalary,Gender FROM employee_payroll GROUP BY Gender
 Go
+
+
+--UC8
+--Adding more information
+ALTER TABLE employee_payroll ADD PhoneNumber bigint
+GO
+ALTER TABLE employee_payroll ADD Department varchar(MAX) not null default 'ENGG'
+GO
+ALTER TABLE employee_payroll ADD Address varchar(MAX) default 'Kashmir'
+Go
+SELECT * FROM employee_payroll
+Go
