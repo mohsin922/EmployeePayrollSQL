@@ -20,3 +20,14 @@ Create table employee_payroll
 )
 
 exec sp_help employee_payroll
+
+--UC3
+--Update Salary
+INSERT INTO employee_payroll (name,salary,startDate) VALUES
+('Mohsin',100000.00,GETDATE()),
+('Raj',200000.00,GETDATE()),
+('Abdul',300000.00,GETDATE())
+
+--Read
+Select *
+from employee_payroll
