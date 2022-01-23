@@ -99,3 +99,14 @@ UPDATE employee_payroll SET IncomeTax = '200'
 Go
 SELECT * FROM employee_payroll
 Go
+
+----UC10-----------------
+----Create duplicate of person-------
+INSERT INTO employee_payroll(Name,BasicPay,Startdate,Gender,PhoneNumber,Department,Address,TaxablePay,Deduction,IncomeTax,NetPay)
+VALUES('Terissa','546789',GETDATE(),'F','8989898989','Sales','Pune','1000','4000','200','567899')
+Go
+INSERT INTO employee_payroll(Name,BasicPay,StartDate,Gender,PhoneNumber,Department,Address,TaxablePay,Deduction,IncomeTax,NetPay)
+VALUES('Terissa','546789',GETDATE(),'F','8989898989','Marketing','Pune','1000','5000','200','567899')
+Go
+SELECT * FROM employee_payroll
+Go
