@@ -39,3 +39,14 @@ SELECT Name, Startdate FROM employee_payroll WHERE Name='Mohsin'
 Go
 SELECT * FROM employee_payroll WHERE StartDate between CAST('2019-03-14' as date) and GETDATE()
 Go
+
+--UC6
+--Add Gender
+Alter table employee_payroll
+Add Gender char(1) Not null default 'M'
+Go
+
+UPDATE employee_payroll SET Gender='M' WHERE id=1
+Go
+SELECT * FROM employee_payroll
+Go
