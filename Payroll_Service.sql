@@ -50,3 +50,16 @@ UPDATE employee_payroll SET Gender='M' WHERE id=1
 Go
 SELECT * FROM employee_payroll
 Go
+
+---UC7
+---Calculate sum, average, count, Min, Max and number of male and female employees
+SELECT SUM(Salary) AS TotalSalary,Gender FROM employee_payroll GROUP BY Gender
+Go
+SELECT AVG(Salary) AS AverageSalary FROM employee_payroll GROUP BY Gender
+Go
+SELECT COUNT(Salary) AS TotalSalary,Gender FROM employee_payroll GROUP BY Gender
+Go
+SELECT MIN(Salary) AS  MinSalary,Gender FROM employee_payroll GROUP BY Gender
+Go
+SELECT MAX(Salary) AS MaxSalary,Gender FROM employee_payroll GROUP BY Gender
+Go
