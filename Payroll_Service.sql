@@ -29,5 +29,6 @@ INSERT INTO employee_payroll (name,salary,startDate) VALUES
 ('Abdul',300000.00,GETDATE())
 
 --Read
+--UC4
 Select *
 from employee_payroll
