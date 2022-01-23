@@ -71,7 +71,31 @@ ALTER TABLE employee_payroll ADD PhoneNumber bigint
 GO
 ALTER TABLE employee_payroll ADD Department varchar(MAX) not null default 'ENGG'
 GO
-ALTER TABLE employee_payroll ADD Address varchar(MAX) default 'Kashmir'
+ALTER TABLE employee_payroll ADD Address varchar(MAX)  default 'Kashmir'
+Go
+UPDATE employee_payroll SET Address = 'Kashmir' WHERE Name = 'Abdul'
+SELECT * FROM employee_payroll
+Go
+
+
+---UC9-------------------------
+---RenameColumn name in existing table(Salary renamed as Basic pay)
+EXEC sp_rename 'employee_payroll.Salary', 'BasicPay'
+Go
+ALTER TABLE employee_payroll 
+ADD TaxablePay money, Deduction money,IncomeTax money,NetPay money
+Go
+UPDATE employee_payroll SET Deduction = '4000' WHERE Name = 'Mohsin'
+Go
+UPDATE employee_payroll SET Deduction = '3000' WHERE Name = 'Raj'
+Go
+UPDATE employee_payroll SET Deduction = '2000' WHERE Name = 'Abdul'
+Go
+UPDATE employee_payroll SET NetPay = (BasicPay-Deduction)
+Go
+UPDATE employee_payroll SET TaxablePay = '1000'
+Go
+UPDATE employee_payroll SET IncomeTax = '200'
 Go
 SELECT * FROM employee_payroll
 Go
