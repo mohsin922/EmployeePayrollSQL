@@ -32,3 +32,10 @@ INSERT INTO employee_payroll (name,salary,startDate) VALUES
 --UC4
 Select *
 from employee_payroll
+
+--UC5
+--Retrieve Specific Data
+SELECT Name, Startdate FROM employee_payroll WHERE Name='Mohsin'
+Go
+SELECT * FROM employee_payroll WHERE StartDate between CAST('2019-03-14' as date) and GETDATE()
+Go
